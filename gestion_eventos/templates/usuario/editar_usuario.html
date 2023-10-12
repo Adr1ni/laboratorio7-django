@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Editar Usuario
+{% endblock title %}
+
+{% block content %}
+
+<h1>Editar Usuario</h1>
+
+{{error}}
+
+<form method="post">
+
+    {% csrf_token %}
+    {{form.as_p}}
+    <button>Actualizar</button>
+
+</form>
+
+<form action="{% url 'eliminar_usuario' usuario.id %}" method="post">
+    {% csrf_token %}
+    <button>Eliminar</button>
+</form>
+{% endblock %}

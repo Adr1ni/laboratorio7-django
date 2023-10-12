@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    Eventos
+{% endblock title %}
+
+{% block content %}
+    
+    <ul>
+        {% for e in eventos %}
+        <li><a href="{% url 'actualizar_evento' e.id %}">{{e}}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

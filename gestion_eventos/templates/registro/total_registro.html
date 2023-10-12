@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    Registros
+{% endblock title %}
+
+{% block content %}
+    
+    <ul>
+        {% for r in registros %}
+        <li><a href="{% url 'actualizar_registro' r.id %}">{{r}}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

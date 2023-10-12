@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    Usuarios Registrados
+{% endblock title %}
+
+{% block content %}
+    
+    <ul>
+        {% for u in usuarios %}
+        <li><a href="{% url 'actualizar_usuario' u.id %}">{{u}}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
