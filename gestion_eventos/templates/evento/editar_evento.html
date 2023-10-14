@@ -1,25 +1,25 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
     Editar Evento
 {% endblock title %}
 
 {% block content %}
+<div class="container">
+    <h1>Editar Evento</h1>
+    
+    {{ error }}
 
-<h1>Editar Evento</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-primary">Actualizar</button>
+    </form>
 
-{{error}}
-
-<form method="post">
-
-    {% csrf_token %}
-    {{form.as_p}}
-    <button>Actualizar</button>
-
-</form>
-
-<form action="{% url 'eliminar_evento' evento.id %}" method="post">
-    {% csrf_token %}
-    <button>Eliminar</button>
-</form>
+    <form action="{% url 'eliminar_evento' evento.id %}" method="post">
+        {% csrf_token %}
+        <button class="btn btn-danger">Eliminar</button>
+    </form>
+</div>
 {% endblock %}

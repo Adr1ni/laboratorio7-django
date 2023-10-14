@@ -7,11 +7,14 @@
 {% endblock title %}
 
 {% block content %}
-    
-    <ul>
+<div class="container">
+
+    <h1>Usuarios Registrados en el sistema</h1>
+
+    <ul class="list-group">
         {% for u in usuarios %}
-        <li><a href="{% url 'actualizar_usuario' u.id %}">{{u}}</a></li>
+        <li class="list-group-item"><a href="{% url 'actualizar_usuario' u.id %}">{{u}}</a></li>
         {% endfor %}
     </ul>
-
+</div>
 {% endblock %}

@@ -1,16 +1,13 @@
 {% extends 'base.html' %}
-{% load static %}
-
 
 {% block title %}
     Eventos Tecsup
-{% endblock title %}
+{% endblock %}
 
 {% block content %}
-    
-    <a href="{% url 'usuarios' %}">Usuarios</a>
-    <a href="{% url 'eventos' %}">Eventos</a>
-    <a href="{% url 'registros' %}">Registros</a>
-    
-
+    <div class="container">
+        <h1>Eventos en Tecsup</h1>
+        <p>No te pierdas de los grandes eventos que te trae Tecsup. 
+            Entra a los diferentes enlaces para ver más información.</p>
+    </div>
 {% endblock %}

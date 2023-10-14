@@ -1,17 +1,18 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
 {% block title %}
     Registros
 {% endblock title %}
 
 {% block content %}
-    
-    <ul>
+<div class="container">
+    <h1>Registro en eventos</h1>
+
+    <ul class="list-group">
         {% for r in registros %}
-        <li><a href="{% url 'actualizar_registro' r.id %}">{{r}}</a></li>
+        <li class="list-group-item"><a href="{% url 'actualizar_registro' r.id %}">{{ r }}</a></li>
         {% endfor %}
     </ul>
-
+</div>
 {% endblock %}

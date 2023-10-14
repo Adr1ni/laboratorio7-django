@@ -6,20 +6,24 @@
 
 {% block content %}
 
-<h1>Editar Usuario</h1>
+<div class="container">
+    
+    <h1>Editar Usuario</h1>
 
-{{error}}
+    {{error}}
 
-<form method="post">
+    <form method="post">
 
-    {% csrf_token %}
-    {{form.as_p}}
-    <button>Actualizar</button>
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class="btn btn-primary">Actualizar</button>
 
-</form>
+    </form>
 
-<form action="{% url 'eliminar_usuario' usuario.id %}" method="post">
-    {% csrf_token %}
-    <button>Eliminar</button>
-</form>
+    <form action="{% url 'eliminar_usuario' usuario.id %}" method="post">
+        {% csrf_token %}
+        <button class="btn btn-danger">Eliminar</button>
+    </form>
+
+</div>
 {% endblock %}
